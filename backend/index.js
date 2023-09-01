@@ -13,6 +13,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+//check heila api
+app.get('/', (req, res) => {
+	res.json('heila to my app!');
+});
+
 // Signup to MongoDB
 app.post('/signup', async (req, res) => {
 	const client = new MongoClient(uri);
