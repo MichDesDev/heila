@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useState, useEffect } from "react";
+const api_url = process.env.API_URL;
 
 const MatchDisplay = ({ matches, setClickedUser }) => {
 	const [ matchedProfiles, setMatchedProfiles ] = useState(null);
@@ -11,7 +12,7 @@ const MatchDisplay = ({ matches, setClickedUser }) => {
 
 	const getMatches = async () => {
 		try {
-			const response = await axios.get("http://localhost:8000/users", {
+			const response = await axios.get(`${api_url}/users`, {
 				params: { userIds: JSON.stringify(matchedUserIds) },
 			});
 			setMatchedProfiles(response.data);

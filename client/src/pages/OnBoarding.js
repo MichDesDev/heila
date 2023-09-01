@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+const api_url = process.env.API_URL;
 
 const OnBoarding = () => {
 	const [ cookies, setCookie, removeCookie ] = useCookies(['user']);
@@ -25,7 +26,7 @@ const OnBoarding = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await axios.put('http://localhost:8000/user', {formData})
+			const response = await axios.put(`${api_url}/user`, {formData})
 			const success = response.status === 200;
 			if (success) navigate('/dashboard');
 		} catch (err) {
