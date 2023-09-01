@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 const uri = process.env.URI;
-const PORT = process.env.URI;
+const port = process.env.PORT || 8000;
 
 const app = express();
 app.use(cors());
@@ -254,4 +254,4 @@ app.post('/message', async (req, res) => {
 	}
 })
 
-app.listen(PORT, () => console.log("Server running on PORT" + PORT));
+app.listen(port, () => console.log("Server running on port: " + port));
