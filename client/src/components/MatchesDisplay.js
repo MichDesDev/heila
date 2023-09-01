@@ -26,7 +26,7 @@ const MatchDisplay = ({ matches, setClickedUser }) => {
 
 	const filteredMatchedProfiles = matchedProfiles?.filter(
 		(matchedProfile) =>
-			matchedProfile.matches.filter((profile) => profile.user_id == userId)
+			matchedProfile.matches.filter((profile) => profile.user_id === userId)
 			.length > 0
 	);
 
