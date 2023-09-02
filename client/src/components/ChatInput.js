@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-const api_url = process.env.API_URL;
+const api_url = process.env.REACT_APP_API_URL;
 
 const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages }) => {
 	const [textArea, setTextArea] = useState("");

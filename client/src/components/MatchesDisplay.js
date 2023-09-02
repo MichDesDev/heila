@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useState, useEffect } from "react";
-const api_url = process.env.API_URL;
+const api_url = process.env.REACT_APP_API_URL;
 
 const MatchDisplay = ({ matches, setClickedUser }) => {
 	const [ matchedProfiles, setMatchedProfiles ] = useState(null);

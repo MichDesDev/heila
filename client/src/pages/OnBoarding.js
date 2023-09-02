@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-const api_url = process.env.API_URL;
+const api_url = process.env.REACT_APP_API_URL;
 
 const OnBoarding = () => {
 	const [ cookies, setCookie, removeCookie ] = useCookies(['user']);

@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-const api_url = process.env.API_URL;
+const api_url = process.env.REACT_APP_API_URL;
 
 const AuthModal = ({ setShowModal, isSignUp }) => {
 

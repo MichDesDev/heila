@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Chat from "./Chat";
 import ChatInput from "./ChatInput";
 import axios from "axios";
-const api_url = process.env.API_URL;
+const api_url = process.env.REACT_APP_API_URL;
 
 const ChatDisplay = ({ user, clickedUser }) => {
 	const userId = user?.user_id;

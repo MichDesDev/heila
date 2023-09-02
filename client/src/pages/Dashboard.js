@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ChatContainer from "../components/ChatContainer";
 import { useCookies } from 'react-cookie'
 import axios from 'axios';
-const api_url = process.env.API_URL;
+const api_url = process.env.REACT_APP_API_URL;
 
 const Dashboard = () => {
 	const [ user, setUser ] = useState(null);
