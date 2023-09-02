@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-const api_url = process.env.REACT_APP_API_URL;
+// const api_url = process.env.REACT_APP_API_URL;
 
 const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages }) => {
 	const [textArea, setTextArea] = useState("");
@@ -16,7 +16,7 @@ const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages
 		};
 
 		try {
-			await axios.post(`${api_url}/message`, { message })
+			await axios.post('https://react-crud-fkgn.onrender.com/message', { message })
 			getUserMessages()
 			getClickedUsersMessages()
 			setTextArea("")

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ChatContainer from "../components/ChatContainer";
 import { useCookies } from 'react-cookie'
 import axios from 'axios';
-const api_url = process.env.REACT_APP_API_URL;
+// const api_url = process.env.REACT_APP_API_URL;
 
 const Dashboard = () => {
 	const [ user, setUser ] = useState(null);
@@ -15,7 +15,7 @@ const Dashboard = () => {
 
 	const getUser = async () => {
 		try {
-			const response = await axios.get(`${api_url}/user`, {
+			const response = await axios.get('https://react-crud-fkgn.onrender.com/user', {
 				params: { userId }
 			})
 			setUser(response.data);
@@ -26,7 +26,7 @@ const Dashboard = () => {
 
 	const getGenderedUsers = async () => {
 		try {
-			const response = await axios.get(`${api_url}/gendered-users`, {
+			const response = await axios.get('https://react-crud-fkgn.onrender.com/gendered-users', {
 				params: {gender: user?.gender_interest}
 			})
 			setGenderedUsers(response.data);
@@ -47,7 +47,7 @@ const Dashboard = () => {
 
 	const updateMatches = async (matchedUserId) => {
 		try {
-			await axios.put(`${api_url}/addmatch`, {
+			await axios.put('https://react-crud-fkgn.onrender.com/addmatch', {
 				userId,
 				matchedUserId
 			})

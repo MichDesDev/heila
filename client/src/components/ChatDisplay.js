@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Chat from "./Chat";
 import ChatInput from "./ChatInput";
 import axios from "axios";
-const api_url = process.env.REACT_APP_API_URL;
+// const api_url = process.env.REACT_APP_API_URL;
 
 const ChatDisplay = ({ user, clickedUser }) => {
 	const userId = user?.user_id;
@@ -12,7 +12,7 @@ const ChatDisplay = ({ user, clickedUser }) => {
 
 	const getUsersMessages = async () => {
 		try {
-			const response = await axios.get(`${api_url}/messages`, {
+			const response = await axios.get('https://react-crud-fkgn.onrender.com/messages', {
 			params: {userId: userId, correspondingUserId: clickedUserId}
 			})
 			setUsersMessages(response.data);
@@ -23,7 +23,7 @@ const ChatDisplay = ({ user, clickedUser }) => {
 
 	const getClickedUsersMessages = async () => {
 		try {
-			const response = await axios.get(`${api_url}/messages`, {
+			const response = await axios.get('https://react-crud-fkgn.onrender.com/messages', {
 			params: {userId: clickedUserId, correspondingUserId: userId}
 			})
 			setClickedUsersMessages(response.data);

@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-const api_url = process.env.REACT_APP_API_URL;
+// const api_url = process.env.REACT_APP_API_URL;
 
 const AuthModal = ({ setShowModal, isSignUp }) => {
 
@@ -29,7 +29,7 @@ const AuthModal = ({ setShowModal, isSignUp }) => {
 				return;
 			}
 
-			const response = await axios.post(`${api_url}/${isSignUp ? 'signup' : 'login'}`, { email, password });
+			const response = await axios.post(`https://react-crud-fkgn.onrender.com/${isSignUp ? 'signup' : 'login'}`, { email, password });
 
 			setCookie('AuthToken', response.data.token);
 			setCookie('UserId', response.data.userId);
