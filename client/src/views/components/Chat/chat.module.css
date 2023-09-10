@@ -1,0 +1,32 @@
+.chatDisplay {
+	padding: 16px;
+	height: 48vh;
+}
+
+.messageBlock {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.imgContainer {
+	height: 50px;
+	width: 50px;
+	border-radius: 24px;
+	overflow: hidden;
+}
+
+.imgContainer img {
+	width: 100%;
+}
+
+.userName {
+	display: none;
+}
+
+.message {
+	margin-left: 16px;
+	padding: 8px 16px;
+	background-color: #FFE5E6;
+	border-radius: 24px;
+}

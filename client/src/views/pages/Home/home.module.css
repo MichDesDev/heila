@@ -1,0 +1,35 @@
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: linear-gradient(
+		to bottom,
+		rgba(0,0,0,.65) 0%,
+		rgba(0,0,0,0) 100%
+	), url('../../images/heila-adventure.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.primaryTitle {
+	font-size: 50px;
+	font-weight: 400;
+	color: #fff;
+	padding: 32px;
+	line-height: 1.2;
+}
+
+@media  (max-width: 767px) {
+
+	.primaryTitle {
+		margin-bottom: 150px;
+	}
+}
+
+
+@media (min-width: 768px) {
+	.container {
+		 height: 800px;
+	}
+}

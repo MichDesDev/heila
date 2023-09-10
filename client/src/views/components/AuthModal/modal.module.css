@@ -1,0 +1,34 @@
+.authModal {
+	position: absolute;
+	top: 100px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	/* transform: translate(-50%, -50%); */
+	max-width: 360px;
+	height: 600px;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 40px;
+}
+
+.authModal .closeIcon {
+	float: right;
+}
+
+.authModal form {
+	display: flex;
+	flex-direction: column;
+}
+
+.authModal input[type=password],
+.authModal input[type=email] {
+	padding: 8px;
+	margin: 8px;
+	font-size: 17px;
+}
+
+.authModal h2 {
+	font: italic;
+}

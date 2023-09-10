@@ -1,0 +1,15 @@
+/* BottomNavbar.css */
+.bottomNavbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #FFB0B0; /* Adjust the background color as needed */
+	display: flex;
+	justify-content: space-evenly;
+	padding: 10px;
+  }
+
+  .bottomNavbar a {
+	padding: 8px;
+  }

@@ -1,0 +1,37 @@
+.profile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.imgContainer {
+	height: 250px;
+	width: 250px;
+	border-radius: 24px;
+	overflow: hidden;
+	margin: 16px;
+}
+
+.imgContainer img {
+	width: 100%;
+}
+
+/* to adjust as secondary button component */
+.logOut {
+	color: rgb(121, 119, 119);
+	background-color: #fff;
+	font-weight: 500;
+	font-size: 15px;
+	text-transform: uppercase;
+	padding: 12px 30px;
+	border-radius: 30px;
+	border: solid 2px rgb(121, 119, 119);
+	margin: 6px;
+	margin-bottom: 100px;
+}
+/* to adjust as secondary button component */
+.logOut:hover {
+	color: rgb(48, 48, 48);
+	border: solid 2px rgb(48, 48, 48);
+	cursor: pointer;
+}

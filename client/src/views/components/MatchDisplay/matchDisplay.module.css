@@ -1,0 +1,38 @@
+.imgContainer {
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;
+	overflow: hidden;
+}
+
+.imgContainer img {
+	width: 100%;
+}
+
+.matchCard {
+	display: flex;
+	flex-direction: row;
+}
+
+.chatDisplay,
+.matchesDisplay {
+	padding: 20px;
+	height: 100vh;
+	overflow-y: auto;
+	padding-bottom: 80px;
+}
+
+.matchDetails {
+	padding-left: 16px;
+}
+
+.matchName {
+	font-weight: 500;
+	margin-bottom: 0;
+}
+
+.matchMessage {
+	margin-top: 8px;
+	font-weight: 300;
+	color: rgb(163, 163, 163);
+}
