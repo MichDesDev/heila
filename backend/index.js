@@ -116,7 +116,7 @@ app.get('/user', async (req, res) => {
 	}
 })
 
-// add a match
+// add liked user
 app.put('/addmatch', async (req, res) => {
 	const client = new MongoClient(uri);
 	const { userId, matchedUserId } = req.body;
@@ -129,6 +129,27 @@ app.put('/addmatch', async (req, res) => {
 		const query = { user_id: userId };
 		const updateDocument = {
 			$push: { matches: {user_id: matchedUserId}},
+		}
+		const user = await users.updateOne(query, updateDocument)
+		res.send(user);
+	} finally {
+		await client.close();
+	}
+})
+
+// add disliked user
+app.put('/addswipeleft', async (req, res) => {
+	const client = new MongoClient(uri);
+	const { userId, dislikedUserId } = req.body;
+
+	try {
+		await client.connect();
+		const database = client.db('app-data');
+		const users = database.collection('users');
+
+		const query = { user_id: userId };
+		const updateDocument = {
+			$push: { disliked: {user_id: dislikedUserId}},
 		}
 		const user = await users.updateOne(query, updateDocument)
 		res.send(user);

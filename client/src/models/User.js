@@ -10,6 +10,7 @@ function createUser(
 	gender_id,
 	gender_interest,
 	matches,
+	disliked,
 	show_gender,
 	url
 ) {
@@ -25,6 +26,7 @@ function createUser(
 	gender_id,
 	gender_interest,
 	matches,
+	disliked,
 	show_gender,
 	url,
 	};

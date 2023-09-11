@@ -12,7 +12,6 @@ import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 const Dashboard = () => {
 	const [user, setUser] = useState(null);
 	const [genderedUsers, setGenderedUsers] = useState(null);
-	const [dislikedUsers, setDislikedUsers] = useState([]);
 	const [cookies, setCookie, removeCookie] = useCookies(['user']);
 
 	const userId = cookies.UserId
@@ -28,6 +27,7 @@ const Dashboard = () => {
 			console.log(error)
 		}
 	}
+
 	const getGenderedUsers = async () => {
 		try {
 			const response = await axios.get('https://react-crud-fkgn.onrender.com/gendered-users', {
@@ -61,14 +61,26 @@ const Dashboard = () => {
 		}
 	}
 
+	const updateDislikedUsers = async (dislikedUserId) => {
+		try {
+			await axios.put('https://react-crud-fkgn.onrender.com/addswipeleft', {
+				userId,
+				dislikedUserId
+			})
+			getUser()
+		} catch (err) {
+			console.log(err)
+		}
+	}
 
 	const swiped = (swipedUserId) => {
-			updateMatches(swipedUserId)
+			updateMatches(swipedUserId);
 			console.log("liked", swipedUserId);
 	}
 
 	const disliked = (swipedUserId) => {
-		setDislikedUsers((prev) => [...prev, swipedUserId]);
+		updateDislikedUsers(swipedUserId);
+		console.log("disliked", userId, swipedUserId);
 	}
 
 	const matchedUserIds = user?.matches.map(({user_id}) => user_id).concat(userId)
