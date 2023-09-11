@@ -1,8 +1,11 @@
+//Styles
+import modalStyles from "./modal.module.css";
+//Logic
 import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import modalStyles from "./modal.module.css";
+
 
 const AuthModal = ({ setShowModal, isSignUp }) => {
 

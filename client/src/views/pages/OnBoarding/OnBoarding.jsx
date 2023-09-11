@@ -22,7 +22,7 @@ const OnBoarding = () => {
 		url: "",
 		about: "",
 		matches: [],
-		disliked: [],
+		disliked: []
 	})
 
 	let navigate = useNavigate();

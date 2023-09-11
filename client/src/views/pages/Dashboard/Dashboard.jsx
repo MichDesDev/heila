@@ -82,9 +82,12 @@ const Dashboard = () => {
 	}
 
 	const likedUserIds = user?.matches.map(({user_id}) => user_id).concat(userId);
-	const dislikedUserIds = user?.disliked?.map(({user_id}) => user_id).concat(userId);
+	let filteredGenderedUsers = genderedUsers?.filter(genderedUser => !likedUserIds.includes(genderedUser.user_id));
 
-	const filteredGenderedUsers = genderedUsers?.filter(genderedUser => !likedUserIds.includes(genderedUser.user_id) && !dislikedUserIds.includes(genderedUser.user_id));
+	if (user?.disliked) {
+		const dislikedUserIds = user?.disliked?.map(({user_id}) => user_id).concat(userId);
+		let filteredGenderedUsers = genderedUsers?.filter(genderedUser => !likedUserIds.includes(genderedUser.user_id) && !dislikedUserIds.includes(genderedUser.user_id));
+	}
 
 	let theme = 'dark';
 
@@ -92,7 +95,7 @@ const Dashboard = () => {
 		<>
 			<AppHead theme={theme} />
 			<div className={dashboardStyles.cardContainer}>
-			{user && (filteredGenderedUsers > 0) ? (filteredGenderedUsers?.map((filteredUser) =>
+			{user && (filteredGenderedUsers) ? (filteredGenderedUsers?.map((filteredUser) =>
 				<ProfileCard
 					className={dashboardStyles.card}
 					user={filteredUser}
