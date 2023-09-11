@@ -23,6 +23,10 @@
 }
 
 .matchDetails {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 	padding-left: 16px;
 }
 

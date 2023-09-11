@@ -12,6 +12,14 @@
 	background-repeat: no-repeat;
 }
 
+.container {
+	text-align: center;
+}
+
+.secondSection {
+	padding: 16px;
+}
+
 .primaryTitle {
 	font-size: 50px;
 	font-weight: 400;
@@ -21,7 +29,6 @@
 }
 
 @media  (max-width: 767px) {
-
 	.primaryTitle {
 		margin-bottom: 150px;
 	}

@@ -59,16 +59,16 @@ const ChatDisplay = ({ user, clickedUser }) => {
 		messages.push(formattedMessage);
 	});
 
-	const descendingOrderMessages = messages?.sort((a,b) => a.timestamp.localeCompare(b.timestamp));
+	const ascendingOrderMessages = messages?.sort((b,a) => a.timestamp.localeCompare(b.timestamp));
 
 	return (
 		<>
-			<Chat descendingOrderMessages={descendingOrderMessages}/>
+			<Chat ascendingOrderMessages={ascendingOrderMessages}/>
 			<ChatInput
-				user={user}
-				clickedUser={clickedUser}
-				getUserMessages={getUsersMessages}
-				getClickedUsersMessages={getClickedUsersMessages}
+			  user={user}
+			  clickedUser={clickedUser}
+			  getUserMessages={getUsersMessages}
+			  getClickedUsersMessages={getClickedUsersMessages}
 			/>
 		</>
 	)

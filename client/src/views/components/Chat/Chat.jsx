@@ -1,12 +1,12 @@
 //Styles
 import chatStyles from "./chat.module.css";
 
-const Chat = ({descendingOrderMessages}) => {
+const Chat = ({ ascendingOrderMessages }) => {
 
 	return (
 		<>
-			<div className={chatStyles.chatDisplay}>
-				{descendingOrderMessages.map((message, _index) => (
+			<div className={chatStyles.chat}>
+				{ascendingOrderMessages.map((message, _index) => (
 					<div
 						className={chatStyles.messageBlock}
 						key={_index}>

@@ -46,22 +46,29 @@ const Profile = () => {
 				<div className={profileStyles.imgContainer}>
 					<img src={user.url} alt={"photo of " + user.first_name} />
 				</div>
-				<h3>{user.first_name}</h3>
-				<h4>About me:</h4>
-				<p>{user.about}</p>
-				<h4>Birthday:</h4>
-				<p>{user.dob_day}/{user.dob_month}/{user.dob_year}</p>
-				<h4>I identify as:</h4>
-				<p>{user.gender_id}</p>
-				<h4>I am interested in:</h4>
-				<p>{user.gender_interest}</p>
+				<div className={profileStyles.edit}>
+					<h3>{user.first_name}</h3>
+					<a href="/profile">edit</a>
+				</div>
+
+				<div className={profileStyles.details}>
+					<h4>About me:</h4>
+					<p>{user.about}</p>
+					<h4>Birthday:</h4>
+					<p>{user.dob_day}/{user.dob_month}/{user.dob_year}</p>
+					<h4>I identify as:</h4>
+					<p>{user.gender_id}</p>
+					<h4>I am interested in:</h4>
+					<p>{user.gender_interest}</p>
+				</div>
+				<button
+				  className={profileStyles.logOut}
+				  onClick={logout}
+				>
+					Logout
+				</button>
 			</div>}
-			<button
-				className={profileStyles.logOut}
-				onClick={logout}
-			>
-				Logout
-			</button>
+
 			{/* <button
 				className={profileStyles.logOut}
 			>

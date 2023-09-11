@@ -5,7 +5,7 @@ import swipeButtonStyles from "./swipeButton.module.css";
 import Heart_Green from "../../images/heart_green.svg";
 import X_Red from "../../images/x_red.svg";
 
-const SwipeButton = ({ type }) => {
+const SwipeButton = ({ type, handleClick }) => {
 
 	let backgroundColor;
 	let iconImg;
@@ -18,16 +18,21 @@ const SwipeButton = ({ type }) => {
 		iconImg = X_Red;
 	}
 
+	const handleButtonClick = () => {
+		handleClick();
+	}
+
 	return (
-		<div
+		<button
 			className={swipeButtonStyles.container}
 			style={{backgroundColor: backgroundColor}}
+			onClick={handleButtonClick}
 		>
 			<img
 				src={iconImg}
 				alt="like"
 			/>
-		</div>
+		</button>
 	)
 }
 

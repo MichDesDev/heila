@@ -5,10 +5,12 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 //Components
-import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
-import ChatDisplay from "../../components/ChatDisplay/ChatDisplay";
-import MatchDisplay from "../../components/MatchDisplay/MatchDisplay";
 import AppHead from "../../components/AppHead/AppHead";
+import MatchDisplay from "../../components/MatchDisplay/MatchDisplay";
+import ChatDisplay from "../../components/ChatDisplay/ChatDisplay";
+import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
+//Images
+import Back_Light from "../../images/back_light.svg";
 
 
 const ChatContainer = () => {
@@ -17,7 +19,7 @@ const ChatContainer = () => {
 	//this could be in a mvc model //needs to be refactored
 	const [ user, setUser ] = useState(null);
 	const [ genderedUsers, setGenderedUsers ] = useState(null)
-	const [ cookies, setCookie, removeCookie ] = useCookies(['user']);
+	const [ cookies ] = useCookies(['user']);
 
 	const userId = cookies.UserId;
 
@@ -62,17 +64,25 @@ const ChatContainer = () => {
 			<div
 				className={chatContainerStyles.chatContainer}
 			>
-				<div>
-					<button className={chatContainerStyles.option} onClick={() => setClickedUser(null)}>Matches</button>
-					<button className={chatContainerStyles.option} disabled={clickedUser} >Chat</button>
+				{clickedUser &&
+				<div className={chatContainerStyles.backContainer}>
+					<button
+					  className={chatContainerStyles.back}
+					  onClick={() => setClickedUser(null)}
+					>
+						<img
+						  src={Back_Light}
+						  alt="back button"
+						/>
+					</button>
 				</div>
-
+				}
 				{!clickedUser && <MatchDisplay matches={user.matches} setClickedUser={setClickedUser} />}
 
 				{clickedUser && <ChatDisplay user={user} clickedUser={clickedUser} />}
-				<BottomNavbar />
 			</div>
 		}
+		<BottomNavbar />
 		</>
 	)
 }

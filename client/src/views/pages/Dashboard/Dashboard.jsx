@@ -64,6 +64,7 @@ const Dashboard = () => {
 
 	const swiped = (swipedUserId) => {
 			updateMatches(swipedUserId)
+			console.log("liked", swipedUserId);
 	}
 
 	const disliked = (swipedUserId) => {

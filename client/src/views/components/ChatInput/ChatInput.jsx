@@ -1,6 +1,10 @@
+//Styles
+import chatInputStyles from "./chatInput.module.css";
+//Logic
 import { useState } from 'react';
 import axios from 'axios';
-import chatInputStyles from "./chatInput.module.css";
+//Components
+import Send_Light from "../../images/send_light.svg"
 
 const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages }) => {
 	const [textArea, setTextArea] = useState("");
@@ -28,8 +32,21 @@ const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages
 
 	return (
 		<div className={chatInputStyles.chatInput} >
-			<textarea value={textArea} onChange={(e) => setTextArea(e.target.value)}/>
-			<button className="secondary-button" onClick={addMessage}>Submit</button>
+			<textarea
+			  className={chatInputStyles.text}
+			  value={textArea}
+			  onChange={(e) => setTextArea(e.target.value)}
+			  autoFocus={true}
+			/>
+			<button
+			  className={chatInputStyles.send}
+			  onClick={addMessage}
+			>
+				<img
+				  src={Send_Light}
+				  alt="submit"
+				/>
+			</button>
 		</div>
 	)
 }

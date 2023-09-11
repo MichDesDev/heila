@@ -57,7 +57,7 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className="other">
+			<section className={homeStyles.secondSection}>
 				<h2>Embark an exciting adventure</h2>
 				<p>Heila is your passport to an exciting dating adventure.</p>
 
@@ -66,7 +66,7 @@ const Home = () => {
 
 				<h3>Become a confident communicator</h3>
 				<p>Flirting practice with AI coming soon.</p>
-			</div>
+			</section>
 		</div>
 	)
 }

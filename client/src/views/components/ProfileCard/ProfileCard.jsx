@@ -9,10 +9,12 @@ const ProfileCard = ({ user, onSwipeLeft, onSwipeRight }) => {
 
 	const handleDislikeClick = () => {
 		onSwipeLeft();
+		console.log('clicked dislike')
 	  };
 
 	  const handleLikeClick = () => {
 		onSwipeRight();
+		console.log('clicked like')
 	  };
 
 
@@ -26,11 +28,11 @@ const ProfileCard = ({ user, onSwipeLeft, onSwipeRight }) => {
 			</h3>
 			<div className={profileCardStyles.likeButtons}>
 				<SwipeButton
-					onClick={onSwipeLeft}
+					handleClick={handleDislikeClick}
 					type={'dislike'}
 				/>
 				<SwipeButton
-					onClick={onSwipeRight}
+					handleClick={handleLikeClick}
 					type={'like'}
 				/>
 			</div>

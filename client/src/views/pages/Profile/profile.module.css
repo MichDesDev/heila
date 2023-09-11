@@ -2,12 +2,40 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 0 24px;
+	text-align: left;
+}
+
+.edit {
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+	align-items: bottom;
+}
+
+.edit a {
+	color: blue;
+	text-decoration: none;
+}
+
+.details {
+
+}
+
+.details h4 {
+	text-align: left;
+	font-weight: 450;
+	padding-top: 16px;
+}
+
+.profile p {
+	font-weight: 300;
 }
 
 .imgContainer {
 	height: 250px;
 	width: 250px;
-	border-radius: 24px;
+	border-radius: 50%;
 	overflow: hidden;
 	margin: 16px;
 }
@@ -23,10 +51,10 @@
 	font-weight: 500;
 	font-size: 15px;
 	text-transform: uppercase;
-	padding: 12px 30px;
+	padding: 16px 32px;
 	border-radius: 30px;
 	border: solid 2px rgb(121, 119, 119);
-	margin: 6px;
+	margin: 32px;
 	margin-bottom: 100px;
 }
 /* to adjust as secondary button component */

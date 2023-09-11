@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
-html, body {
-	margin: 0;
-	padding: 0;
-	text-align: center;
-}
-
 * {
+	margin: 0;
+	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
+	color: #2C2929;
 }
-
 
 .primary-button {
 	color: #fff;
@@ -42,19 +38,4 @@ html, body {
 .secondary-button:hover {
 	color: rgb(48, 48, 48);
 	border: solid 2px rgb(48, 48, 48);
-}
-
-/* chat container */
-
-.chat-container .option {
-    border: none;
-    background-color: rgb(255, 255, 255);
-    border-bottom: solid 4px rgb(243, 33, 33);
-    font-size: 20px;
-    margin: 2px;
-    padding: 10px;
-}
-
-.chat-container .option:disabled {
-    border-bottom: solid 4px rgb(187, 187, 187);
 }
