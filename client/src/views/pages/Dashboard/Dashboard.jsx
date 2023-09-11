@@ -84,9 +84,11 @@ const Dashboard = () => {
 	const likedUserIds = user?.matches.map(({user_id}) => user_id).concat(userId);
 	let filteredGenderedUsers = genderedUsers?.filter(genderedUser => !likedUserIds.includes(genderedUser.user_id));
 
-	if (user?.disliked) {
-		const dislikedUserIds = user?.disliked?.map(({user_id}) => user_id).concat(userId);
-		let filteredGenderedUsers = genderedUsers?.filter(genderedUser => !likedUserIds.includes(genderedUser.user_id) && !dislikedUserIds.includes(genderedUser.user_id));
+	if (user?.disliked && user.disliked.length > 0) {
+		const dislikedUserIds = user.disliked.map(({ user_id }) => user_id).concat(userId);
+
+		// Modify filteredGenderedUsers based on dislikes
+		filteredGenderedUsers = filteredGenderedUsers.filter(genderedUser => !dislikedUserIds.includes(genderedUser.user_id));
 	}
 
 	let theme = 'dark';
