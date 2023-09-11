@@ -2,19 +2,15 @@
 import SwipeButton from "../SwipeButton/SwipeButton";
 import profileCardStyles from "./profileCard.module.css";
 //Logic
-//React
-import { useState } from "react";
 
 const ProfileCard = ({ user, onSwipeLeft, onSwipeRight }) => {
 
 	const handleDislikeClick = () => {
 		onSwipeLeft();
-		console.log('clicked dislike')
 	  };
 
 	  const handleLikeClick = () => {
 		onSwipeRight();
-		console.log('clicked like')
 	  };
 
 

@@ -6,10 +6,14 @@
 }
 
 .backContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	border-bottom: 0.2px solid #e8e8e8;
 }
 
 .back {
+	flex: 0;
 	border: none;
 	background-color: rgb(255, 255, 255);
 	padding: 10px;
@@ -28,5 +32,24 @@
 }
 
 .imgContainer img {
+	width: 100%;
+}
+
+.clickedUserContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.clickedUserImgContainer {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 8px;
+}
+
+.clickedUserImg {
 	width: 100%;
 }

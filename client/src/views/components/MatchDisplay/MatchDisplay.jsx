@@ -55,6 +55,7 @@ const MatchDisplay = ({ matches, setClickedUser }) => {
 					</div>
 				</div>
 			))}
+			{filteredMatchedProfiles === 0 && <h2>At the moment, you don't have any matches</h2>}
 		</div>
 	);
 };

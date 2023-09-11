@@ -4,7 +4,7 @@ import chatInputStyles from "./chatInput.module.css";
 import { useState } from 'react';
 import axios from 'axios';
 //Components
-import Send_Light from "../../images/send_light.svg"
+import Send_Green from "../../images/send_green.svg"
 
 const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages }) => {
 	const [textArea, setTextArea] = useState("");
@@ -43,7 +43,7 @@ const ChatInput = ({ user, clickedUser, getUserMessages, getClickedUsersMessages
 			  onClick={addMessage}
 			>
 				<img
-				  src={Send_Light}
+				  src={Send_Green}
 				  alt="submit"
 				/>
 			</button>

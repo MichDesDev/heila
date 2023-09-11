@@ -2,36 +2,40 @@
 	display: flex;
 	flex-direction: column-reverse;
 	padding: 0 16px;
-	height: 448px;
+	height: 430px;
 	overflow: auto;
 	position: relative;
 }
 
 .messageBlock {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	margin: 8px 0;
 }
 
-.imgContainer {
-	height: 50px;
-	width: 50px;
-	border-radius: 24px;
-	overflow: hidden;
+.userMessageInfo {
+	margin-left: auto;
+	font-size: 12px;
+	color: #ccc;
 }
 
-.imgContainer img {
-	width: 100%;
+.userMessage {
+	margin-left: auto;
+	padding: 8px 16px;
+	background-color: #C8E9DB;
+	border-radius: 24px 24px 0px 24px;
 }
 
-.userName {
-	display: none;
+.matchMessageInfo {
+	margin-right: auto;
+	font-size: 12px;
+	color: #ccc;
 }
 
-.message {
-	margin-left: 16px;
+.matchMessage {
+	margin-right: auto;
 	padding: 8px 16px;
 	background-color: #FFE5E6;
-	border-radius: 24px;
+	border-radius: 24px 24px 24px 0px;
 }

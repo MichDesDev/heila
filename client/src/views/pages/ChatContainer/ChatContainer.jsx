@@ -75,6 +75,18 @@ const ChatContainer = () => {
 						  alt="back button"
 						/>
 					</button>
+					{clickedUser &&
+					<div className={chatContainerStyles.clickedUserContainer}>
+						<div className={chatContainerStyles.clickedUserImgContainer}>
+							<img
+							  src={clickedUser.url}
+							  alt={'photo of' + clickedUser.first_name}
+							  className={chatContainerStyles.clickedUserImg}
+							/>
+						</div>
+						<p>{clickedUser.first_name}</p>
+					</div>
+					}
 				</div>
 				}
 				{!clickedUser && <MatchDisplay matches={user.matches} setClickedUser={setClickedUser} />}

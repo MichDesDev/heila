@@ -12,6 +12,8 @@ const ChatDisplay = ({ user, clickedUser }) => {
 	const [ usersMessages, setUsersMessages ] = useState(null);
 	const [ clickedUsersMessages, setClickedUsersMessages ] = useState(null);
 
+	const userName = user?.first_name;
+
 	const getUsersMessages = async () => {
 		try {
 			const response = await axios.get('https://react-crud-fkgn.onrender.com/messages', {
@@ -63,7 +65,7 @@ const ChatDisplay = ({ user, clickedUser }) => {
 
 	return (
 		<>
-			<Chat ascendingOrderMessages={ascendingOrderMessages}/>
+			<Chat ascendingOrderMessages={ascendingOrderMessages} userName={userName}/>
 			<ChatInput
 			  user={user}
 			  clickedUser={clickedUser}
