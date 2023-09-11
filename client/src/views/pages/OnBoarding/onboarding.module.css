@@ -1,35 +1,41 @@
 .onboarding {
-	border-top: solid 1px rgb(213, 213, 213);
+	padding-top: 24px;
+	text-align: center;
 }
 
 .onboarding form {
 	display: flex;
-	justify-content: center;
-}
-
-.onboarding form section {
-	display: flex;
 	flex-direction: column;
-	padding: 20px;
-	width: 35%;
+	justify-content: center;
 	text-align: start;
+	padding: 20px;
+	gap: 8px;
 }
 
+.descr {
+	margin-top: 16px;
+}
+
+/* first_name, birthday, about me, Profile Photo*/
 .onboarding form input {
-	padding: 15px 30px;
-	margin: 10px 0;
+	padding: 8px 8px;
 	font-size: 15px;
-	border: solid 2px rgb(219, 219, 219);
+	border: solid 1px rgb(219, 219, 219);
 	border-radius: 10px;
+	width: 100%;
 }
-
-.onboarding form label {
-	margin: 10px 0;
-}
-
+/* birthday */
 .onboarding form .multipleInputContainer {
 	display: flex;
 	flex-direction: row;
+	gap: 8px;
+	width: 100%;
+	max-width: 100%;
+}
+
+/* checkbox */
+.onboarding form input[type=checkbox] {
+	width: 5%;
 }
 
 .onboarding form input::-webkit-outer-spin-button,
@@ -42,16 +48,11 @@
 	-moz-appearance: textfield; /* Firefox */
 }
 
-.onboarding form .multipleInputContainer input {
-	margin-right: 10px;
-}
-
+/* gender, show me */
 .onboarding form .multipleInputContainer label {
-	padding: 10px;
-	border: solid 2px rgb(144, 144, 144);
-	border-radius: 10px;
-	transition: all 0.3s;
-	margin-right: 10px;
+	padding: 8px;
+	border: solid 1px rgb(144, 144, 144);
+	border-radius: 16px;
 }
 
 .onboarding form input[type=radio] {
@@ -59,7 +60,7 @@
 }
 
 .onboarding form input[type=number] {
-	width: 10%;
+	width: 100%;
 }
 
 .onboarding form input[type=radio]:checked + label {
@@ -68,6 +69,7 @@
 
 .onboarding form input[type=submit]:hover {
 	background-color: rgb(235, 235, 235);
+	margin: 16px;
 }
 
 .onboarding form input[type=submit]:active {

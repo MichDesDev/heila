@@ -12,9 +12,9 @@ import BottomNavbar from "../../components/BottomNavbar/BottomNavbar";
 const Dashboard = () => {
 	const [user, setUser] = useState(null);
 	const [genderedUsers, setGenderedUsers] = useState(null);
-	const [cookies, setCookie, removeCookie] = useCookies(['user']);
+	const [cookies] = useCookies(['user']);
 
-	const userId = cookies.UserId
+	const userId = cookies.UserId;
 
 
 	const getUser = async () => {
@@ -75,17 +75,16 @@ const Dashboard = () => {
 
 	const swiped = (swipedUserId) => {
 			updateMatches(swipedUserId);
-			console.log("liked", swipedUserId);
 	}
 
 	const disliked = (swipedUserId) => {
 		updateDislikedUsers(swipedUserId);
-		console.log("disliked", userId, swipedUserId);
 	}
 
-	const matchedUserIds = user?.matches.map(({user_id}) => user_id).concat(userId)
+	const likedUserIds = user?.matches.map(({user_id}) => user_id).concat(userId);
+	const dislikedUserIds = user?.disliked?.map(({user_id}) => user_id).concat(userId);
 
-	const filteredGenderedUsers = genderedUsers?.filter(genderedUser => !matchedUserIds.includes(genderedUser.user_id));
+	const filteredGenderedUsers = genderedUsers?.filter(genderedUser => !likedUserIds.includes(genderedUser.user_id) && !dislikedUserIds.includes(genderedUser.user_id));
 
 	let theme = 'dark';
 
@@ -93,7 +92,7 @@ const Dashboard = () => {
 		<>
 			<AppHead theme={theme} />
 			<div className={dashboardStyles.cardContainer}>
-			{user && (filteredGenderedUsers?.map((filteredUser) =>
+			{user && (filteredGenderedUsers > 0) ? (filteredGenderedUsers?.map((filteredUser) =>
 				<ProfileCard
 					className={dashboardStyles.card}
 					user={filteredUser}
@@ -101,7 +100,13 @@ const Dashboard = () => {
 					onSwipeRight={() => swiped(filteredUser.user_id)}
 					onSwipeLeft={() => disliked(filteredUser.user_id)}
 				/>
-			))}
+			)) :
+				<h1
+				  style={{padding: "30px"}}
+				>
+					No more swipes for today
+				</h1>
+			}
 			</div>
 			<BottomNavbar theme={theme} />
 		</>

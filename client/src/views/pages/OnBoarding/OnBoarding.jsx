@@ -6,10 +6,10 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 //Components
-import Navbar from "../../components/Navbar/Navbar";
+import AppHead from "../../components/AppHead/AppHead";
 
 const OnBoarding = () => {
-	const [ cookies, setCookie, removeCookie ] = useCookies(['user']);
+	const [ cookies ] = useCookies(['user']);
 	const [ formData, setFormData ] = useState({
 		user_id: cookies.UserId,
 		first_name: "",
@@ -21,7 +21,8 @@ const OnBoarding = () => {
 		gender_interest: "woman",
 		url: "",
 		about: "",
-		matches: []
+		matches: [],
+		disliked: [],
 	})
 
 	let navigate = useNavigate();
@@ -49,18 +50,14 @@ const OnBoarding = () => {
 
 	return (
 		<>
-			<Navbar
-				minimal={true}
-				setShowModal={() => {}}
-				showModal={false}
-			/>
+			<AppHead />
 			<div
 				className={onboardingStyles.onboarding}
 			>
 				<h2>CREATE ACCOUNT</h2>
 				<form onSubmit={handleSubmit}>
-					<section>
-						<label htmlFor="first_name">First Name</label>
+
+						<label htmlFor="first_name" className={onboardingStyles.descr}>First Name</label>
 						<input
 							type="text"
 							id="first_name"
@@ -71,7 +68,7 @@ const OnBoarding = () => {
 							onChange={handleChange}
 						/>
 
-						<label>Birthday</label>
+						<label className={onboardingStyles.descr}>Birthday</label>
 						<div className={onboardingStyles.multipleInputContainer}>
 							<input
 								type="number"
@@ -102,7 +99,7 @@ const OnBoarding = () => {
 							/>
 						</div>
 
-						<label>Gender</label>
+						<label className={onboardingStyles.descr}>Gender</label>
 						<div className={onboardingStyles.multipleInputContainer}>
 							<input
 								type="radio"
@@ -113,6 +110,7 @@ const OnBoarding = () => {
 								checked={formData.gender_id === 'man'}
 							/>
 							<label htmlFor="man-gender-identity">Man</label>
+
 							<input
 								type="radio"
 								id="woman-gender-identity"
@@ -122,28 +120,28 @@ const OnBoarding = () => {
 								checked={formData.gender_id === 'woman'}
 							/>
 							<label htmlFor="woman-gender-identity">Woman</label>
+
 							<input
 								type="radio"
 								id="more-gender-identity"
 								name="gender_id"
-								value="more"
+								value="other"
 								onChange={handleChange}
 								checked={formData.gender_id === 'more'}
 							/>
-							<label htmlFor="more-gender-identity">More</label>
+							<label htmlFor="more-gender-identity">Other</label>
 						</div>
 
-						<label htmlFor="show-gender">Show gender on my profile</label>
+						<label htmlFor="show-gender" className={onboardingStyles.descr}>Show gender on my profile</label>
 						<input
 							type="checkbox"
 							id="show-gender"
 							name="show_gender"
-							value="more"
 							onChange={handleChange}
 							checked={formData.show_gender}
 						/>
 
-						<label htmlFor="show-gender">Show me</label>
+						<label htmlFor="show-gender" className={onboardingStyles.descr}>Show me</label>
 						<div className={onboardingStyles.multipleInputContainer}>
 							<input
 								type="radio"
@@ -174,7 +172,7 @@ const OnBoarding = () => {
 							<label htmlFor="everyone-gender-interest">Everyone</label>
 						</div>
 
-						<label htmlFor="about">About Me</label>
+						<label htmlFor="about" className={onboardingStyles.descr}>About Me</label>
 						<input
 							type="text"
 							id="about"
@@ -184,15 +182,8 @@ const OnBoarding = () => {
 							value={formData.about}
 							onChange={handleChange}
 						/>
-						<input
-							type="submit"
-							// onSubmit={handleSubmit}
-						/>
-					</section>
 
-
-					<section>
-						<label htmlFor="url">Profile Photo</label>
+						<label htmlFor="url" className={onboardingStyles.descr}>Profile Photo</label>
 						<input
 							type="url"
 							name="url"
@@ -203,7 +194,8 @@ const OnBoarding = () => {
 						<div className={onboardingStyles.photoContainer}>
 							{formData.url && <img src={formData.url} alt="profile pic preview" />}
 						</div>
-					</section>
+
+						<input type="submit" className={onboardingStyles.descr} value="CREATE ACCOUNT" />
 				</form>
 			</div>
 		</>
