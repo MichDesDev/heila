@@ -33,7 +33,10 @@ const MatchDisplay = ({ matches, setClickedUser }) => {
 			.length > 0
 	);
 
+	// console.log(filteredMatchedProfiles.length);
+
 	//should create a component to display the data of the matches -- this is very messy atm
+	if (filteredMatchedProfiles?.length > 0) {
 	return (
 		<div className={matchDisplayStyles.matchesDisplay}>
 			{filteredMatchedProfiles?.map((match, _index) => (
@@ -57,7 +60,13 @@ const MatchDisplay = ({ matches, setClickedUser }) => {
 			))}
 			{filteredMatchedProfiles === 0 && <h2>At the moment, you don't have any matches</h2>}
 		</div>
-	);
+	)} else {
+		return (
+			<div>
+				<p>You've no matches, keep swiping</p>
+			</div>
+		)
+	};
 };
 
 export default MatchDisplay;
